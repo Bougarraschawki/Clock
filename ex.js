@@ -18,6 +18,18 @@ const myOclock = () => {
     minute = date.getMinutes();
     second = date.getSeconds();
 
+    if(hour< 10) {
+        hour = '0' + hour;
+    }
+
+    if(minute < 10) {
+        minute = '0' + minute;
+    }
+
+    if(second < 10) {
+        second = '0' + second;
+    }
+
     hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg`;
     sc.style.transform = `rotateZ(${ss}deg)`;
@@ -35,7 +47,7 @@ let d = day.toDateString();
 console.log(d);
 
 let html = `
-        <span>Today is <b>${d}</b></span> `;
+        <span>Today is <b style="color: #ff7e70">${d}</b> <img style="top: -10px; left: 320px;" src="image/Calendar_perspective_matte.png"></img></span> `;
         
 dd.innerHTML = html;
 
